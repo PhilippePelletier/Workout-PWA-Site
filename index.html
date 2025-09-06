@@ -129,6 +129,47 @@ label.badge .badge-text{ display:inline; line-height:1.2; }
   .group[data-type="weight"] input{ min-width:100px; }
 }
 </style>
+
+<style id="manual-inputs-no-plus-css">
+/* --- Training Log: remove inline +/- and make inputs full-width --- */
+.set-row .group .num-btn { display: none !important; }
+.set-row .group { grid-template-columns: 1fr !important; overflow: visible !important; }
+.set-row .group input {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 12px;
+  font-size: 17px;
+  min-height: 40px;
+}
+/* Keep columns balanced: Set | Weight | Reps  */
+.set-row{ grid-template-columns: minmax(52px,.55fr) 1.7fr 1.6fr !important; }
+/* Weight and Reps wide enough on iPhone 16 Pro */
+.set-row .group[data-type="weight"] input { min-width: 120px; }
+.set-row .group[data-type="reps"]   input { min-width: 100px; }
+/* Small screens */
+@media (max-width:430px){
+  .set-row{ grid-template-columns: minmax(48px,.52fr) 1.65fr 1.58fr !important; }
+  .set-row .group[data-type="weight"] input { min-width: 112px; }
+  .set-row .group[data-type="reps"]   input { min-width: 96px;  }
+}
+@media (max-width:370px){
+  .set-row{ grid-template-columns: minmax(46px,.50fr) 1.60fr 1.56fr !important; }
+  .set-row .group[data-type="weight"] input { min-width: 106px; }
+  .set-row .group[data-type="reps"]   input { min-width: 92px;  }
+}
+</style>
+
+<style id="set-sheet-no-plus-css">
+/* --- Set Sheet: remove +/- and go single wide input per field --- */
+#setSheet .shell button{ display:none !important; }
+#setSheet .shell{ grid-template-columns: 1fr !important; }
+#setSheet .shell input{
+  text-align:center;
+  font-size:22px;
+  padding:12px 10px;
+  min-height:46px;
+}
+</style>
 </head>
 <body>
 <header>
