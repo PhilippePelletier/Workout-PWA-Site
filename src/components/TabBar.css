@@ -1,0 +1,38 @@
+.tabbar {
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  padding: 8px 12px 14px;
+  background: rgba(9, 15, 28, 0.96);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.tab {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  border-radius: 12px;
+  font: inherit;
+}
+
+.tab.active {
+  color: var(--text);
+  background: rgba(14, 165, 233, 0.12);
+}
+
+.tab .ico {
+  font-size: 18px;
+}
+
+.tab .lbl {
+  font-size: 12px;
+}
