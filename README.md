@@ -5,7 +5,7 @@ This repository contains the React + Vite rebuild of the Workout PWA. The app is
 ## Development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -14,7 +14,7 @@ If you're running in GitHub Codespaces, make sure the port 5173 is forwarded and
 ## Production build
 
 ```bash
-npm install
+npm ci
 npm run build
 npm run preview
 ```
@@ -29,4 +29,21 @@ If you deploy elsewhere or with a custom domain, override the base path during b
 
 ```bash
 BASE_PATH=/ npm run build
+```
+
+
+## Troubleshooting install errors
+
+If you hit dependency resolution errors (`ERESOLVE`), first make sure your branch includes the committed `package-lock.json`, then reset local install artifacts and retry:
+
+```bash
+rm -rf node_modules
+npm ci
+```
+
+If your lockfile was accidentally deleted, restore it first:
+
+```bash
+git checkout -- package-lock.json
+npm ci
 ```
