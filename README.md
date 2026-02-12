@@ -30,14 +30,3 @@ If you deploy elsewhere or with a custom domain, override the base path during b
 ```bash
 BASE_PATH=/ npm run build
 ```
-
-
-## Troubleshooting install errors
-
-If you hit dependency resolution errors (`ERESOLVE`), reset local install artifacts and retry:
-
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
